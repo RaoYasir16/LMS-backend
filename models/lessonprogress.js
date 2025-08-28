@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      LessonProgress.belongsTo(models.User, { foreignKey: 'userId' });
-      LessonProgress.belongsTo(models.Lesson, { foreignKey: 'lessonId' });
+      LessonProgress.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
+      LessonProgress.belongsTo(models.Lesson, { foreignKey: 'lessonId', as: 'lesson' });
     }
   }
   LessonProgress.init({

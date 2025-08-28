@@ -1,4 +1,5 @@
 const express = require('express');
+const { sequelize } = require('./models');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const {unless} = require('express-unless');
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+  // sequelize.sync({ alter: true })
 
 
 authenticate.unless = unless;

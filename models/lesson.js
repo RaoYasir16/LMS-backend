@@ -11,8 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Lesson.belongsTo(models.Section, { foreignKey: "sectionId",as: "section" });
-      Lesson.hasMany(models.LessonProgress, { foreignKey: 'lessonId' });
+      Lesson.belongsTo(models.Section, { foreignKey: "sectionId", as: "section" });
+      Lesson.hasMany(models.LessonProgress, { foreignKey: 'lessonId', as: 'progress' });
+
     }
   }
   Lesson.init({
