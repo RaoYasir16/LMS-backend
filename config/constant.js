@@ -7,6 +7,7 @@ module.exports ={
         NOT_FOUND: 404,
         CONFLICT: 409,
         REQUIRED: 400,
+        FORBIDDEN:403 ,
         INTERNAL_SERVER_ERROR: 500
     },
 
